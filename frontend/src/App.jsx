@@ -7,7 +7,11 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import Intro from "./pages/Intro";
 import Home from "./pages/Home";
 import Signup from './pages/Signup';
-import Login from './pages/Login'
+import Login from './pages/Login';
+import AddBook from './pages/AddBook';
+import ViewBooks from './pages/ViewBooks';
+import DeleteBook from './pages/DeleteBook';
+import UpdateBook from './pages/UpdateBook';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +24,10 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/addbook" element={<AddBook/>} />
+        <Route path="/viewbooks" element={<ViewBooks/>} />
+        <Route path='/deletebook' element={<DeleteBook/>} />
+         <Route path='/updatebook' element={<UpdateBook/>} />
       </Routes>
     </BrowserRouter>
         

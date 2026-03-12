@@ -6,7 +6,7 @@ function Intro() {
       
       {/* Background Image */}
       <img
-        src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80"
+        src="https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-stack-of-books-in-a-library-with-blurred-bookshelves-background-image_16181415.jpg"
         alt="Books Background"
         className="absolute w-full h-full object-cover"
       />
