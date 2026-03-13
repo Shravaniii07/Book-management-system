@@ -18,7 +18,9 @@ router.get("/getbooks",handleBookListController)
 router.get("/findbook",handleFindBookController);
 
 //delete
-router.delete("/deletebook",handleDeleteBookController);
+// router.delete("/deletebook",handleDeleteBookController);
+router.delete("/deletebook/:Id",handleDeleteBookController);
+// router.delete("/deletebook/:Id",handleDeleteBookController);
 
 // update
 router.put("/updatebook",handleUpdateBookController);

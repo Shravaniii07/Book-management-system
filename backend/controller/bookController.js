@@ -74,23 +74,51 @@ const handleBookListController=async(req,res)=>{
     }
 
 
-     const handleDeleteBookController=async(req,res)=>{
-        try{
-        const data=req.body;
-        const d=await book.deleteOne({_id:data.Id});
+//      const handleDeleteBookController=async(req,res)=>{
+//         try{
+//         const data=req.body;
+//         const d=await book.deleteOne({_id:data.Id});
         
         
 
-  if(d){
-            return res.status(200).json({Message:"book deleted", Sucess:true,
-                Delete:d})
-        }
-        return res.status(500).json({Message:"details not found", Sucess:false})
-        }
-        catch(err){
-           return res.status(500).json({Message:err.message, Sucess:false}) 
-        }
+//   if(d){
+//             return res.status(200).json({Message:"book deleted", Sucess:true,
+//                 Delete:d})
+//         }
+//         return res.status(500).json({Message:"details not found", Sucess:false})
+//         }
+//         catch(err){
+//            return res.status(500).json({Message:err.message, Sucess:false}) 
+//         }
+//     }
+
+
+const handleDeleteBookController = async (req, res) => {
+  try {
+
+    const Id = req.params.Id;
+
+    const d = await book.deleteOne({ _id: Id });
+
+    if (d.deletedCount > 0) {
+      return res.status(200).json({
+        Message: "Book deleted successfully",
+        Success: true
+      });
     }
+
+    return res.status(404).json({
+      Message: "Book not found",
+      Success: false
+    });
+
+  } catch (err) {
+    return res.status(500).json({
+      Message: err.message,
+      Success: false
+    });
+  }
+};
 
 
     const handleUpdateBookController = async (req, res) => {

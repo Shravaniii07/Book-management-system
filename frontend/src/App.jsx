@@ -12,6 +12,8 @@ import AddBook from './pages/AddBook';
 import ViewBooks from './pages/ViewBooks';
 import DeleteBook from './pages/DeleteBook';
 import UpdateBook from './pages/UpdateBook';
+import Dashboard from "./pages/Dashboard";
+import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +21,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Intro/>} />
         <Route path="/home" element={<Home/>} />
@@ -28,6 +31,7 @@ function App() {
         <Route path="/viewbooks" element={<ViewBooks/>} />
         <Route path='/deletebook' element={<DeleteBook/>} />
          <Route path='/updatebook' element={<UpdateBook/>} />
+         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
         
